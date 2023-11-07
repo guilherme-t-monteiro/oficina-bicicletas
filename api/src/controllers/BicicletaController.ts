@@ -1,4 +1,4 @@
-import { Bicicleta } from "../Bicicleta";
+import { Bicicleta } from "../models/Bicicleta";
 import { Request, Response } from 'express';
 import { ILike } from "typeorm";
 
