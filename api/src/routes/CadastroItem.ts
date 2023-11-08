@@ -1,6 +1,6 @@
 import { NextFunction, Router, Request, Response } from "express";
-import { CadastroItemController } from "../controllers/CadastroItemController";
-import { CadastroItem } from "../models/CadastroItem";
+import { ItemController } from "../controllers/ItemController";
+import { Item } from "../models/Item";
 import * as yup from 'yup';
 
 async function validarPayload (req: Request, res: Response, next: NextFunction): Promise<Response|void>{
@@ -25,7 +25,7 @@ async function validarPayload (req: Request, res: Response, next: NextFunction):
 
 async function validarSeExiste (req: Request, res: Response, next: NextFunction): Promise<Response|void>{
     let id = Number (req.params.id);
-    let cadastro_item: CadastroItem|null = await CadastroItem.findOneBy ({ id });
+    let cadastro_item: Item|null = await Item.findOneBy ({ id });
     if ( ! cadastro_item) {
         return res.status(422).json({error: 'Cadastro de Item não encontrado!' });
     }
@@ -37,7 +37,7 @@ async function validarSeExiste (req: Request, res: Response, next: NextFunction)
 
 let router : Router = Router();
 
-let cadastro_item_controller: CadastroItemController = new CadastroItemController();
+let cadastro_item_controller: ItemController = new ItemController();
 
 router.get('/cadastro_item', cadastro_item_controller.list);
 

@@ -8,7 +8,7 @@ export class OrdemServico extends BaseEntity {
    public id: number;
 
    @Column()
-   public diagnostico: string;
+   public problema: string;
    
    @Column()
    public solucao: string;

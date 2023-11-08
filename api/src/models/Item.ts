@@ -1,8 +1,8 @@
 import { BaseEntity, Column, Entity, JoinColumn, ManyToMany, ManyToOne, OneToMany, PrimaryGeneratedColumn, JoinTable } from "typeorm";
 import { OrdemServico } from "./OrdemServico";
 
-@Entity('CadastroItem')
-export class CadastroItem extends BaseEntity {
+@Entity('item')
+export class Item extends BaseEntity {
    @PrimaryGeneratedColumn()
    public id: number;
 

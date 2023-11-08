@@ -21,6 +21,7 @@ export class BicicletaController {
     
         return res.status(200).json(Bicicleta);
     }
+    
     async delete (req: Request, res: Response): Promise<Response> {
         let bicicleta: Bicicleta = res.locals.bicicleta;
     
