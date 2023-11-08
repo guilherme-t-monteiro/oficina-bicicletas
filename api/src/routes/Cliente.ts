@@ -2,7 +2,6 @@ import { NextFunction, Request, Response, Router } from 'express';
 import { ClienteController } from '../controllers/ClienteController';
 import * as yup from 'yup';
 import { Cliente } from '../models/Cliente';
-import { Not } from 'typeorm';
 
 async function validarPayload (req: Request, res: Response, next: NextFunction): Promise<Response|void> {
   let schema = yup.object({

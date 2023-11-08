@@ -19,7 +19,7 @@ export class BicicletaController {
            
         }).save();
     
-        return res.status(200).json(Bicicleta);
+        return res.status(200).json(bicicleta);
     }
     
     async delete (req: Request, res: Response): Promise<Response> {

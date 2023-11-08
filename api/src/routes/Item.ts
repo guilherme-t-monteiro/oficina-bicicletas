@@ -25,28 +25,28 @@ async function validarPayload (req: Request, res: Response, next: NextFunction):
 
 async function validarSeExiste (req: Request, res: Response, next: NextFunction): Promise<Response|void>{
     let id = Number (req.params.id);
-    let cadastro_item: Item|null = await Item.findOneBy ({ id });
-    if ( ! cadastro_item) {
-        return res.status(422).json({error: 'Cadastro de Item não encontrado!' });
+    let item: Item|null = await Item.findOneBy ({ id });
+    if ( ! item) {
+        return res.status(422).json({error: 'Item não encontrado!' });
     }
     
-    res.locals.cadastro_item= cadastro_item;
+    res.locals.item = item;
     
     return next();
 }
 
 let router : Router = Router();
 
-let cadastro_item_controller: ItemController = new ItemController();
+let itemController: ItemController = new ItemController();
 
-router.get('/cadastro_item', cadastro_item_controller.list);
+router.get('/item', itemController.list);
 
-router.post('/cadastro_item', validarPayload, cadastro_item_controller.create);
+router.post('/item', validarPayload, itemController.create);
 
-router.put('/cadastro_item/:id', validarSeExiste, cadastro_item_controller.update);
+router.put('/item/:id', validarSeExiste, itemController.update);
 
-router.delete('/cadastro_item/:id', validarSeExiste, cadastro_item_controller.delete);
+router.delete('/item/:id', validarSeExiste, itemController.delete);
 
-router.get('/cadastro_item/:id', validarSeExiste, cadastro_item_controller.find);
+router.get('/item/:id', validarSeExiste, itemController.find);
 
 export default router;

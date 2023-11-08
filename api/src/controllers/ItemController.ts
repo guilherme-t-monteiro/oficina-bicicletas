@@ -18,7 +18,7 @@ export class ItemController {
                       
         }).save();
     
-        return res.status(200).json(Item);
+        return res.status(200).json(item);
     }
     
     async delete (req: Request, res: Response): Promise<Response> {

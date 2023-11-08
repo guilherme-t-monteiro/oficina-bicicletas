@@ -7,7 +7,7 @@ export class ClienteController {
     async list (req: Request, res: Response): Promise<Response> {
         let cliente: Cliente[] = await Cliente.find();
 
-        return res.status(200).json(Cliente);
+        return res.status(200).json(cliente);
     }
 
     async create (req: Request, res: Response): Promise<Response> {
@@ -20,7 +20,7 @@ export class ClienteController {
             endereco: body.endereco,
         }).save();
     
-        return res.status(200).json(Cliente);
+        return res.status(200).json(cliente);
     }
 
     async delete (req: Request, res: Response): Promise<Response> {
@@ -34,7 +34,7 @@ export class ClienteController {
     async find (req: Request, res: Response): Promise<Response> {
         let cliente: Cliente = res.locals.cliente;
   
-        return res.status(200).json(Cliente);
+        return res.status(200).json(cliente);
     }
 
    

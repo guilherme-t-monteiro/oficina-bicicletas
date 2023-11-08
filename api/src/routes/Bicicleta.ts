@@ -7,8 +7,6 @@ async function validarPayload (req: Request, res: Response, next: NextFunction):
     let schema = yup.object({
         marca: yup.string().min(3).max(255).required(),
         modelo: yup.string().min(3).max(255).required(),
-        id_ordem_servico: yup.number().required(),
-       
     });
 
     let payload = req.body;
@@ -18,7 +16,7 @@ async function validarPayload (req: Request, res: Response, next: NextFunction):
         return next();
     } catch(error){
         if (error instanceof yup.ValidationError) {
-            return res.status(400).json({erros: error.errors});
+            return res.status(400).json({error: error.errors});
         }
         return res.status(500).json({error: 'Ops! Algo deu errado!'});
     }
