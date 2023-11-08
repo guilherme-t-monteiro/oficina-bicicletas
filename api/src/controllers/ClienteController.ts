@@ -15,6 +15,9 @@ export class ClienteController {
        
         let cliente: Cliente = await Cliente.create({
             nome: body.nome,
+            email: body.email,
+            telefone: body.telefone,
+            endereco: body.endereco,
         }).save();
     
         return res.status(200).json(Cliente);
@@ -34,13 +37,17 @@ export class ClienteController {
         return res.status(200).json(Cliente);
     }
 
+   
     async update (req: Request, res: Response): Promise<Response> {
         let body = req.body;
         let cliente: Cliente = res.locals.cliente;
     
-        Cliente.nome = body.nome,
-        await nome.save();
+        cliente.nome = body.nome,
+        cliente.email = body.email,
+        cliente.telefone = body.telefone, 
+        cliente.endereco = body.endereco,
+        await cliente.save();
     
-        return res.status(200).json(Cliente);
+        return res.status(200).json(cliente);
     } 
 }

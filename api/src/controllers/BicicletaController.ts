@@ -9,18 +9,18 @@ export class BicicletaController {
 
         return res.status(200).json(bicicleta);
     }
-    async update (req: Request, res: Response): Promise<Response>
-
+  
     async create (req: Request, res: Response): Promise<Response> {
         let body = req.body;
        
         let bicicleta: Bicicleta = await Bicicleta.create({
-            descricao: body.descricao,
+            marca: body.marca,
+            modelo: body.modelo,
+           
         }).save();
     
-        return res.status(200).json(bicicleta);
+        return res.status(200).json(Bicicleta);
     }
-
     async delete (req: Request, res: Response): Promise<Response> {
         let bicicleta: Bicicleta = res.locals.bicicleta;
     
@@ -39,7 +39,9 @@ export class BicicletaController {
         let body = req.body;
         let bicicleta: Bicicleta = res.locals.bicicleta;
     
-        bicicleta.descricao = body.bicicleta,
+        bicicleta.marca = body.bicicleta,
+        bicicleta.modelo = body.modelo,
+
         await bicicleta.save();
     
         return res.status(200).json(bicicleta);
