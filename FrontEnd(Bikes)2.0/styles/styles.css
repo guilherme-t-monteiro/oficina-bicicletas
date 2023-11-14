@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100&family=Roboto:wght@300&display=swap");
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+  font-family: "IBM Plex Mono", monospace;
+  font-family: "Roboto", sans-serif;
+  /* background: linear-gradient(to right, #0a2995, #0575E6); */
+}
+
+header {
+  display: flex;
+  align-items: center;
+  background-color: #494949;
+  width: 100%;
+  top: 0;
+}
+
+header nav {
+  margin-left: 50px;
+}
+
+header img {
+  height: 100px;
+  width: auto;
+}
+
+.button {
+  padding: 10px 24px;
+  width: 250px;
+  color: #ffffff;
+  background-color: #4e709c;
+  border-radius: 3px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 20px;
+  text-decoration: none;
+  border: none;
+  box-shadow: none;
+}
+
+.button:hover {
+  transform: scale(1.05);
+  background-color: #638fc9;
+}
+
+.container--buttonmenu {
+  margin-left: 56%;
+}
+
+.rodape {
+  text-align: center;
+  color: white;
+  background-color: #494949;
+  position:absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+}
+
+.rodape2 {
+  text-align: center;
+  color: white;
+  background-color: #494949;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+}
+
+nav a {
+  margin-left: 10px;
+  text-decoration: none;
+  color: #b0b0b0;
+}
+
+.selected {
+  color: #ffffff;
+}
+
+nav a:hover {
+  color: #ffffff;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  padding-top: 2%;
+}
+
+.column {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.column2 {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.column2 .button {
+  margin-bottom: 0.5%;
+}
+
+.colunm img {
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.colunm .text {
+  font-size: 16px;
+  text-align: center;
+  /* color: #ffffff; */
+}
+
+.text__aling {
+  text-align: left;
+}
+
+.text2 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.text3 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.text4 {
+  font-size: 18px;
+}
+
+form {
+  width: 300px;
+  margin: 0 auto;
+}
+
+input[type="text"], [type="date"], [type="name"], [type="tel"], [type="email"], [type="password"], [type="submit"],
+select {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="submit"] {
+  width: 100%;
+  background-color: #4e709c;
+  color: white;
+  padding: 14px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+} 
+
+input[type="submit"]:hover {
+  background-color: #638fc9;
+}
+
+#menuAdmin {
+  padding-top: 11%;
+  padding-bottom: 11%;
+}
