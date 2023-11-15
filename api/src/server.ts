@@ -24,8 +24,8 @@ server.use(usuarioRoutes);
 
 export default {
   start () {
-    server.listen(Number(process.env.DB_PORT), () => {
-      console.log(`Server started on port ${process.env.DB_PORT}!`);
+    server.listen(Number(process.env.SERVER_PORT), () => {
+      console.log(`Server started on port ${process.env.SERVER_PORT}!`);
     });
   }
 };

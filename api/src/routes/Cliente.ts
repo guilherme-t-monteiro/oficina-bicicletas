@@ -9,7 +9,6 @@ async function validarPayload (req: Request, res: Response, next: NextFunction):
     email: yup.string().email().required(),
     telefone: yup.string().min(6).max(16).required(),
     endereco: yup.string().min(3).max(255).required(),
-    id_ordem_servico: yup.number().required(),
   });
 
   let payload = req.body;
@@ -46,6 +45,8 @@ let clienteController: ClienteController = new ClienteController();
 router.get('/cliente', clienteController.list);
 
 router.get('/cliente/:id', validarSeExiste, clienteController.find);
+
+router.post('/cliente/email/:id', validarSeExiste, clienteController.enviarEmail);
 
 router.post('/cliente', validarPayload, clienteController.create);
 
