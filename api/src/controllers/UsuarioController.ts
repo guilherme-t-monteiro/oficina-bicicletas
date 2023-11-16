@@ -143,7 +143,7 @@ export class UsuariosController {
     html += "</table>";
     let today = new Date(Date.now());
     let data = today.toLocaleString(); // "30/1/2022"
-    html += `<div>Gerado por: Renan às ${data}</div>`;
+    html += `<div>Gerado por: Amanda às ${data}</div>`;
 
     let pdfBuffer = await UsuariosController.pdf(html);
 
