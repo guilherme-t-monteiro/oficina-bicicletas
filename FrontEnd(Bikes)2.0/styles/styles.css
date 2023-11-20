@@ -175,3 +175,27 @@ input[type="submit"]:hover {
   padding-top: 11%;
   padding-bottom: 11%;
 }
+
+.table-listarusuario{
+  background-color: #494949;
+  width: 180%;
+  justify-content: center;
+  border-radius: 20px;
+  color: #ffffff;
+}
+
+.table-listarordem{
+  background-color: #494949;
+  width: 180%;
+  justify-content: center;
+  border-radius: 20px;
+  color: #ffffff;
+}
+
+.table-listarcliente{
+  background-color: #494949;
+  width: 180%;
+  justify-content: center;
+  border-radius: 20px;
+  color: #ffffff;
+}
