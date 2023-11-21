@@ -5,13 +5,11 @@ import * as yup from 'yup';
 
 async function validarPayload (req: Request, res: Response, next: NextFunction): Promise<Response|void>{
     let schema = yup.object({
-        marca: yup.string().min(3).max(255).required(),
-        modelo: yup.string().min(3).max(255).required(),
         problema: yup.string().min(3).max(255).required(),
         solucao: yup.string().min(3).max(255).required(),
         preco: yup.number(),
-        idBicicleta: yup.number().required(),
-        idCliente: yup.number().required()
+        bicicletaId: yup.number().required(),
+        clienteId: yup.number().required()
     });
 
     let payload = req.body;
@@ -43,14 +41,14 @@ let router : Router = Router();
 
 let ordemServicoController: OrdemServicoController = new OrdemServicoController();
 
-router.get('/bicicleta', ordemServicoController.list);
+router.get('/ordemservico', ordemServicoController.list);
 
-router.post('/bicicleta', validarPayload, ordemServicoController.create);
+router.post('/ordemservico', validarPayload, ordemServicoController.create);
 
-router.put('/bicicleta/:id', validarSeExiste, ordemServicoController.update);
+router.put('/ordemservico/:id', validarSeExiste, ordemServicoController.update);
 
-router.delete('/bicicleta/:id', validarSeExiste, ordemServicoController.delete);
+router.delete('/ordemservico/:id', validarSeExiste, ordemServicoController.delete);
 
-router.get('/bicicleta/:id', validarSeExiste, ordemServicoController.find);
+router.get('/ordemservico/:id', validarSeExiste, ordemServicoController.find);
 
 export default router;
